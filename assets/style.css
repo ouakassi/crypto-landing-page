@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700&display=swap");
+:root {
+  --header-height: 8rem;
+
+  /*========== Colors ==========*/
+
+  --title-color: rgb(253, 253, 253);
+  --text-color: rgb(213, 223, 235);
+  --button-color: rgb(160 112 219);
+  --body-color: linear-gradient(
+    90deg,
+    rgb(56, 52, 86) 13%,
+    rgb(58, 52, 109) 56%,
+    rgba(69, 62, 121, 1) 81%
+  );
+  --container-color: rgba(65, 59, 112, 255);
+  --container-color-2: rgba(38, 36, 56, 255);
+
+  --scroll-bar-color: rgb(1 13 31);
+  --scroll-thumb-color: rgb(19, 216, 223);
+  --scroll-thumb-color-hover: rgb(58, 206, 161);
+
+  --first-color: rgb(19, 216, 223);
+  --first-color-alt: rgb(11, 245, 214);
+  --background-color: linear-gradient(
+    120deg,
+    rgb(19, 216, 223),
+    rgb(58, 206, 161) 50%,
+    rgb(11, 245, 214) 70%
+  );
+
+  /*========== Font and typography ==========*/
+  --font: "Kanit", sans-serif;
+  --font-2: "Changa", sans-serif;
+  --font-3: "Poppins", sans-serif;
+
+  --biggest-font-size: 5rem;
+  --big-font-size: 3.2rem;
+  --h1-font-size: 2.4rem;
+  --h2-font-size: 2rem;
+  --h3-font-size: 1.8rem;
+  --normal-font-size: 1.5rem;
+  --small-font-size: 1.4rem;
+  --smaller-font-size: 1.3rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+
+  --mb-0-25: 0.4rem;
+  --mb-0-5: 0.8rem;
+  --mb-0-75: 1.2rem;
+  --mb-1: 1.6rem;
+  --mb-1-5: 2rem;
+  --mb-2: 3.2rem;
+  --mb-2-5: 3.8rem;
+  --mb-3: 4.8rem;
+  --mb-4: 7rem;
+  --mb-5: 9rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 4.8rem;
+    --h1-font-size: 3.6rem;
+    --h2-font-size: 2.4rem;
+    --h3-font-size: 2rem;
+    --normal-font-size: 1.6rem;
+    --small-font-size: 1.4rem;
+    --smaller-font-size: 1.3rem;
+  }
+}
+
+/*==================== BASE ====================*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--normal-font-size);
+  background: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------- lAYOUT -------------------------------- */
+.section {
+  padding: 5rem 0 3rem;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  background-color: rgb(83, 34, 34);
+}
+
+.colored-title {
+  color: var(--button-color);
+  font-weight: var(--font-semi-bold);
+}
+
+header {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: rgba(113, 57, 57, 0.144);
+}
+
+nav {
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: space-between;
+  padding: 2rem 10%;
+}
+.nav-items {
+  display: flex;
+}
+.nav-items a {
+  margin-right: 5rem;
+  text-transform: capitalize;
+}
+.nav-items a:hover {
+  color: var(--button-color);
+}
+.logo {
+  color: aliceblue;
+}
+
+.hero {
+  background-color: rgba(15, 215, 58, 0.497);
+  height: fit-content;
+  margin-top: var(--header-height);
+}
+.hero__container {
+  display: flex;
+  gap: 4rem;
+}
+.hero-images {
+  background-color: rgba(121, 200, 197, 0.323);
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 50rem; */
+}
+.hero-image {
+  position: absolute;
+  border-radius: 50% 50% 10% 10%;
+  height: 40rem;
+  max-width: 40rem;
+  box-shadow: #00000073 0px 0px 10px 0px;
+  z-index: var(--z-tooltip);
+}
+.hero-image_cercle {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  width: 45rem;
+  height: 45rem;
+  border: 1px solid var(--button-color);
+  border-radius: 50%;
+}
+.cercle1 {
+  left: 4rem;
+  top: -2rem;
+}
+.cercle2 {
+  right: 4rem;
+  top: 2rem;
+}
+.hero-data {
+  background-color: rgba(174, 63, 22, 0.323);
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  /* margin: 0 auto; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.hero-data h1 {
+  font-size: var(--big-font-size);
+  text-transform: capitalize;
+}
+.hero-user {
+  display: flex;
+  align-items: center;
+}
+.hero-user img {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 1rem;
+  border-radius: 50%;
+}
