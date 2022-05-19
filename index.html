@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
@@ -98,8 +102,8 @@
         </div>
       </section>
 
-      <!--  Hero Section  -->
-      <section class="trending section">
+      <!--  Trending Section  -->
+      <section class="trending__section section">
         <div class="trending__container container">
           <div class="trending-header">
             <h2>trending auction <i class="button--icon uil uil-fire"></i></h2>
@@ -271,6 +275,111 @@
           </div>
         </div>
       </section>
+
+      <!--  Category Section  -->
+      <section class="category__section section">
+        <div class="category__container container">
+          <h2 class="category-header">
+            top categories <i class="button--icon uil uil-arrow-up-right"></i>
+          </h2>
+          <div class="swiper mySwiper">
+            <div class="category-arrows">
+              <div class="category-arrow arrow-left">
+                <i class="button--icon uil uil-location-arrow-alt"></i>
+              </div>
+              <div class="category-arrow arrow-right">
+                <i class="button--icon uil uil-location-arrow-alt"></i>
+              </div>
+            </div>
+            <div class="categories swiper-wrapper">
+              <div class="category swiper-slide">
+                <div class="catergory-data">
+                  <img src="./assets/imgs/nft1.gif" alt="" />
+                  <span>art</span>
+                  <p><span>10.975</span> assets</p>
+                </div>
+                <div class="category-ranking">
+                  <span class="category-rank">#1</span>
+                  <a href="#"
+                    ><i class="button--icon uil uil-plus-circle"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="category swiper-slide">
+                <div class="catergory-data">
+                  <img src="./assets/imgs/nft2.png" alt="" />
+                  <span>sport</span>
+                  <p><span>10.975</span> assets</p>
+                </div>
+                <div class="category-ranking">
+                  <span class="category-rank">#1</span>
+                  <a href="#"
+                    ><i class="button--icon uil uil-plus-circle"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="category swiper-slide">
+                <div class="catergory-data">
+                  <img src="./assets/imgs/nft3.png" alt="" />
+                  <span>trading cards</span>
+                  <p><span>10.975</span> assets</p>
+                </div>
+                <div class="category-ranking">
+                  <span class="category-rank">#1</span>
+                  <a href="#"
+                    ><i class="button--icon uil uil-plus-circle"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="category swiper-slide">
+                <div class="catergory-data">
+                  <img src="./assets/imgs/nft4.png" alt="" />
+                  <span>music</span>
+                  <p><span>10.975</span> assets</p>
+                </div>
+                <div class="category-ranking">
+                  <span class="category-rank">#1</span>
+                  <a href="#"
+                    ><i class="button--icon uil uil-plus-circle"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="category swiper-slide">
+                <div class="catergory-data">
+                  <img src="./assets/imgs/nft5.png" alt="" />
+                  <span>gaming</span>
+                  <p><span>10.975</span> assets</p>
+                </div>
+                <div class="category-ranking">
+                  <span class="category-rank">#1</span>
+                  <a href="#"
+                    ><i class="button--icon uil uil-plus-circle"></i
+                  ></a>
+                </div>
+              </div>
+              <div class="category swiper-slide">
+                <div class="catergory-data">
+                  <img src="./assets/imgs/nft6.png" alt="" />
+                  <span>design</span>
+                  <p><span>10.975</span> assets</p>
+                </div>
+                <div class="category-ranking">
+                  <span class="category-rank">#1</span>
+                  <a href="#"
+                    ><i class="button--icon uil uil-plus-circle"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+          </div>
+          <a class="category-more" href="#">view more categories</a>
+        </div>
+      </section>
     </main>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
