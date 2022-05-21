@@ -274,21 +274,21 @@ nav {
   position: absolute;
   display: inline-block;
   content: "";
-  width: 45rem;
-  height: 45rem;
-  border: 2px solid var(--first-color);
+  width: 40rem;
+  height: 40rem;
+  border: 4px solid var(--first-color-alt);
   border-radius: 50%;
 }
 .cercle1 {
-  left: -2rem;
+  left: -1rem;
   top: 0rem;
 }
 .cercle2 {
-  right: -2rem;
+  right: -0rem;
   top: -5rem;
+  border-color: var(--first-color);
 }
 .hero-data {
-  /* background-color: rgba(174, 63, 22, 0.323); */
   width: 50%;
   display: flex;
   justify-content: center;
@@ -434,6 +434,7 @@ nav {
 .trending-project__favourite .cercle:nth-child(3) {
   background-color: var(--first-color-alt-2);
 }
+
 /* --------------- Categories Section ---------------------- */
 
 .category__container {
@@ -491,6 +492,7 @@ nav {
   width: 6rem;
   text-align: center;
   border-radius: 10px;
+  font-weight: var(--font-medium);
 }
 
 .swiper {
@@ -541,4 +543,102 @@ nav {
 .category-more {
   align-self: flex-end;
   text-transform: capitalize;
+}
+
+/* --------------- Artists Section ---------------------- */
+
+.artists__container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.artists-header {
+  text-transform: capitalize;
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2);
+}
+.artists {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5rem;
+}
+.artists-container {
+  display: flex;
+  flex-flow: column;
+  margin-bottom: var(--mb-2);
+  /* background-color: rgb(111, 139, 44); */
+}
+.artist {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--container-color);
+  transition: 0.2s;
+}
+.artist:hover {
+  background-color: var(--container-color);
+  border-radius: 10px;
+  transform: scale(1.1);
+}
+.artist-img {
+  /* background-color: rebeccapurple; */
+  padding: 1rem;
+  position: relative;
+}
+.artist-img .button--icon {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  margin: 0;
+}
+.artist-ranking {
+  font-weight: var(--font-semi-bold);
+  color: var(--first-color-alt);
+  font-size: var(--h2-font-size);
+  margin-right: 1rem;
+}
+.artist img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+.artist-data {
+  /* background-color: rgb(117, 5, 228); */
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  padding: 1rem;
+
+  width: 30rem;
+  /* width: 100%; */
+}
+.artist-name {
+  display: flex;
+  flex-flow: column nowrap;
+  /* background-color: rgb(116, 53, 178); */
+}
+.artist-wallet {
+  /* background-color: rgb(195, 173, 217); */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.artist-wallet h4:first-child {
+  color: rgb(9, 222, 90);
+}
+.artist-wallet:nth-last-child(8) {
+  color: rgb(222, 9, 9);
+}
+
+.artist-wallet h4:last-child {
+  color: var(--first-color-alt);
 }
