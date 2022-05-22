@@ -6,20 +6,10 @@
 
   /*========== Colors ==========*/
   --first-color: rgb(112 119 221);
-  --first-color-2: rgb(81 4 176);
-
   --first-color-alt: rgb(255 236 102);
   --first-color-alt-2: rgb(255, 225, 0);
 
-  --body-color: linear-gradient(
-    to right,
-    rgb(20 8 41),
-    rgb(63 47 126),
-    rgb(102 84 204)
-  );
-  --first-color: rgb(112 119 221);
-  --first-color-alt: rgb(255 236 102);
-  --container-color: rgba(65, 59, 112, 255);
+  --container-color: rgb(40 23 77);
   --container-color-2: rgba(38, 36, 56, 255);
 
   --body-color: linear-gradient(
@@ -28,33 +18,12 @@
     rgb(63 47 126),
     rgb(81 4 176)
   );
+  --up-color: rgb(9, 222, 90);
+  --down-color: rgb(222, 9, 9);
 
-  --container-color: rgb(40 23 77);
-
-  /* --first-color-alt: rgb(216 88 226);
-  --first-color: rgb(115 32 133);
-  --body-color: linear-gradient(
-    to right,
-    rgb(20 8 41),
-    rgb(39 22 80),
-    rgb(61 20 98)
-  ); */
-  /* --first-color-alt: rgb(160 112 219);
-  --first-color: rgb(106, 3, 232);
-
-  --body-color: linear-gradient(
-    90deg,
-    rgb(56, 52, 86) 13%,
-    rgb(58, 52, 109) 56%,
-    rgba(69, 62, 121, 1) 81%
-  ); */
   --title-color: rgb(253, 253, 253);
   --text-color: rgb(213, 223, 235);
   --text-color-2: rgb(142, 144, 148);
-
-  --scroll-bar-color: rgb(1 13 31);
-  --scroll-thumb-color: rgb(19, 216, 223);
-  --scroll-thumb-color-hover: rgb(58, 206, 161);
 
   /*========== Font and typography ==========*/
   --font: "Changa", sans-serif;
@@ -212,7 +181,7 @@ img {
 
 /*----------------- Main css ----------*/
 
-header {
+.header {
   width: 100%;
   height: var(--header-height);
   position: fixed;
@@ -466,6 +435,14 @@ nav {
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.category:hover {
+  transform: scale(1.01);
+  z-index: var(--z-fixed);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .catergory-data {
   display: flex;
@@ -502,7 +479,6 @@ nav {
   padding: 4rem 0;
 }
 .swiper-wrapper {
-  /* background-color: aqua; */
   padding: 5rem 0;
 }
 .category-arrows {
@@ -513,7 +489,6 @@ nav {
 
 .category-arrow {
   position: absolute;
-  /* background-color: red; */
   cursor: pointer;
   top: -2rem;
   right: 0;
@@ -560,14 +535,15 @@ nav {
 }
 .artists {
   display: flex;
-  flex-flow: row nowrap;
-  gap: 5rem;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 5rem;
+  margin-bottom: var(--mb-2);
 }
 .artists-container {
   display: flex;
   flex-flow: column;
-  margin-bottom: var(--mb-2);
-  /* background-color: rgb(111, 139, 44); */
 }
 .artist {
   display: inline-flex;
@@ -586,17 +562,17 @@ nav {
   background-color: var(--container-color);
   border-radius: 10px;
   transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .artist-img {
-  /* background-color: rebeccapurple; */
   padding: 1rem;
   position: relative;
 }
 .artist-img .button--icon {
   position: absolute;
-  bottom: 10%;
-  right: 10%;
-  margin: 0;
+  bottom: 4%;
+  right: 0%;
 }
 .artist-ranking {
   font-weight: var(--font-semi-bold);
@@ -610,22 +586,17 @@ nav {
   border-radius: 50%;
 }
 .artist-data {
-  /* background-color: rgb(117, 5, 228); */
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   padding: 1rem;
-
   width: 30rem;
   /* width: 100%; */
 }
 .artist-name {
   display: flex;
   flex-flow: column nowrap;
-  /* background-color: rgb(116, 53, 178); */
 }
 .artist-wallet {
-  /* background-color: rgb(195, 173, 217); */
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -633,12 +604,71 @@ nav {
 }
 
 .artist-wallet h4:first-child {
-  color: rgb(9, 222, 90);
+  color: var(--up-color);
 }
-.artist-wallet:nth-last-child(8) {
-  color: rgb(222, 9, 9);
+.artists-container:last-child .artist:last-child:nth-child(4) h4:first-child {
+  color: var(--down-color);
 }
 
 .artist-wallet h4:last-child {
   color: var(--first-color-alt);
+}
+
+/* --------------- FAQ Section ---------------------- */
+
+.faq__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq-header {
+  text-transform: uppercase;
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2);
+}
+.boxes {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  justify-content: center;
+  /* background-color: rgb(134, 69, 69); */
+  padding: 1rem;
+  width: max(100%, 80%);
+}
+.box {
+  background-color: var(--container-color);
+  width: clamp(10rem, 80%, 80rem);
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: column;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  user-select: none;
+}
+.box-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  /* background-color: rgb(65, 121, 79); */
+  padding: 1rem;
+}
+.box-head h2 {
+  color: var(--first-color-alt);
+  /* font-weight: 100; */
+  font-size: var(--normal-font-size);
+  /* height: 100%; */
+}
+.box-head .button--icon {
+  font-size: var(--h2-font-size);
+}
+.box-content {
+  color: white;
+  height: 0px;
+  overflow: hidden;
+  transition: 0.4s;
 }
