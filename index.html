@@ -5,6 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crypto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
@@ -16,9 +32,12 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
+    <div class="spinner__container">
+      <div class="spinner"></div>
+    </div>
     <header class="header">
       <nav>
-        <div class="logo">
+        <a href="#" class="logo">
           <svg
             id="logo-58"
             width="80"
@@ -112,14 +131,18 @@
               stroke-miterlimit="10"
             ></path>
           </svg>
-        </div>
+        </a>
         <ul class="nav-items">
-          <a href="#"><li>explore</li></a>
-          <a href="#"><li>blog</li></a>
-          <a href="#"><li>about</li></a>
-          <a href="#"><i class="uil uil-wallet"></i></a>
+          <a href="#trending"><li>trending</li></a>
+          <a href="#categories"><li>categories</li></a>
+          <a href="#artists"><li>artists</li></a>
+          <a href="#faq"><li>faq</li></a>
           <a href="#"><i class="uil uil-user"></i></a>
         </ul>
+        <div class="btns">
+          <i class="open button--icon uil uil-align-justify"></i>
+          <i class="close button--icon uil uil-times"></i>
+        </div>
       </nav>
     </header>
     <main>
@@ -128,6 +151,7 @@
         <div class="hero__container container">
           <div class="hero-images">
             <img
+              loading="lazy"
               class="hero-image"
               src="./assets/imgs/hero.jpg"
               alt="hero image"
@@ -141,7 +165,7 @@
               quest album #2022
             </h1>
             <div class="hero-user">
-              <img src="./assets/imgs/hero.jpg" alt="user" />
+              <img loading="lazy" src="./assets/imgs/hero.jpg" alt="user" />
               <span>@ouakassi</span>
             </div>
             <div class="hero-numbers">
@@ -169,7 +193,7 @@
       </section>
 
       <!--  Trending Section  -->
-      <section class="trending__section section">
+      <section id="trending" class="trending__section section">
         <div class="trending__container container">
           <div class="trending-header">
             <h2>trending auction <i class="button--icon uil uil-fire"></i></h2>
@@ -178,6 +202,7 @@
           <div class="trending-projects">
             <article class="trending-project">
               <img
+                loading="lazy"
                 class="trending-project__img"
                 src="./assets/imgs/nft2.png"
                 alt="nft"
@@ -205,6 +230,7 @@
             </article>
             <article class="trending-project">
               <img
+                loading="lazy"
                 class="trending-project__img"
                 src="./assets/imgs/nft1.gif"
                 alt="nft"
@@ -232,6 +258,7 @@
             </article>
             <article class="trending-project">
               <img
+                loading="lazy"
                 class="trending-project__img"
                 src="./assets/imgs/nft3.png"
                 alt="nft"
@@ -259,6 +286,7 @@
             </article>
             <article class="trending-project">
               <img
+                loading="lazy"
                 class="trending-project__img"
                 src="./assets/imgs/nft4.png"
                 alt="nft"
@@ -286,6 +314,7 @@
             </article>
             <article class="trending-project">
               <img
+                loading="lazy"
                 class="trending-project__img"
                 src="./assets/imgs/nft5.png"
                 alt="nft"
@@ -313,6 +342,7 @@
             </article>
             <article class="trending-project">
               <img
+                loading="lazy"
                 class="trending-project__img"
                 src="./assets/imgs/nft6.png"
                 alt="nft"
@@ -343,7 +373,7 @@
       </section>
 
       <!--  Category Section  -->
-      <section class="category__section section">
+      <section id="categories" class="category__section section">
         <div class="category__container container">
           <h2 class="category-header">
             top categories <i class="button--icon uil uil-arrow-up-right"></i>
@@ -360,7 +390,7 @@
             <div class="categories swiper-wrapper">
               <article class="category swiper-slide">
                 <div class="catergory-data">
-                  <img src="./assets/imgs/nft1.gif" alt="" />
+                  <img loading="lazy" src="./assets/imgs/nft1.gif" alt="" />
                   <span>art</span>
                   <p><span>10.975</span> assets</p>
                 </div>
@@ -373,7 +403,7 @@
               </article>
               <article class="category swiper-slide">
                 <div class="catergory-data">
-                  <img src="./assets/imgs/nft2.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/nft2.png" alt="" />
                   <span>sport</span>
                   <p><span>10.975</span> assets</p>
                 </div>
@@ -386,7 +416,7 @@
               </article>
               <article class="category swiper-slide">
                 <div class="catergory-data">
-                  <img src="./assets/imgs/nft3.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/nft3.png" alt="" />
                   <span>trading cards</span>
                   <p><span>10.975</span> assets</p>
                 </div>
@@ -399,7 +429,7 @@
               </article>
               <article class="category swiper-slide">
                 <div class="catergory-data">
-                  <img src="./assets/imgs/nft4.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/nft4.png" alt="" />
                   <span>music</span>
                   <p><span>10.975</span> assets</p>
                 </div>
@@ -412,7 +442,7 @@
               </article>
               <article class="category swiper-slide">
                 <div class="catergory-data">
-                  <img src="./assets/imgs/nft5.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/nft5.png" alt="" />
                   <span>gaming</span>
                   <p><span>10.975</span> assets</p>
                 </div>
@@ -425,7 +455,7 @@
               </article>
               <article class="category swiper-slide">
                 <div class="catergory-data">
-                  <img src="./assets/imgs/nft6.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/nft6.png" alt="" />
                   <span>design</span>
                   <p><span>10.975</span> assets</p>
                 </div>
@@ -444,7 +474,7 @@
       </section>
 
       <!--  Artists Section  -->
-      <section class="artists__section section">
+      <section id="artists" class="artists__section section">
         <div class="artists__container container">
           <div class="artists-header">
             <h2>top artists <i class="button--icon uil uil-bolt"></i></h2>
@@ -454,7 +484,7 @@
               <div class="artist">
                 <span class="artist-ranking">1</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user1.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user1.png" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -475,7 +505,7 @@
               <div class="artist">
                 <span class="artist-ranking">2</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user2.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user2.png" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -496,7 +526,7 @@
               <div class="artist">
                 <span class="artist-ranking">3</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user3.jpg" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user3.jpg" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -517,7 +547,7 @@
               <div class="artist">
                 <span class="artist-ranking">4</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user4.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user4.png" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -540,7 +570,7 @@
               <div class="artist">
                 <span class="artist-ranking">5</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user5.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user5.png" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -561,7 +591,7 @@
               <div class="artist">
                 <span class="artist-ranking">6</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user6.png" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user6.png" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -582,7 +612,7 @@
               <div class="artist">
                 <span class="artist-ranking">7</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user7.gif" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user7.gif" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -603,7 +633,7 @@
               <div class="artist">
                 <span class="artist-ranking">8</span>
                 <div class="artist-img">
-                  <img src="./assets/imgs/user8.jpg" alt="" />
+                  <img loading="lazy" src="./assets/imgs/user8.jpg" alt="" />
                   <i class="button--icon uil uil-check-circle"></i>
                 </div>
                 <div class="artist-data">
@@ -628,7 +658,7 @@
       </section>
 
       <!--  FAQ Section  -->
-      <section class="faq__section section">
+      <section id="faq" class="faq__section section">
         <div class="faq__container container">
           <div class="faq-header">
             <h2>faq<i class="button--icon uil uil-question-circle"></i></h2>
@@ -696,7 +726,7 @@
     </main>
 
     <footer>
-      <!-- <div class="wave-container">
+      <div class="wave-container">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#240829"
@@ -704,130 +734,128 @@
             d="M0,96L80,106.7C160,117,320,139,480,149.3C640,160,800,160,960,149.3C1120,139,1280,117,1360,106.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
           ></path>
         </svg>
-      </div> -->
-      <div class="footer container">
-        <div class="logo">
-          <svg
-            id="logo-58"
-            width="80"
-            height="80"
-            viewBox="0 0 50 50"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              class="stroke"
-              d="M25 43.94H14.06L10.86 38.39L8.28998 33.94L10.86 29.48"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M10.86 29.4801H5.7L3.13 25.0001L6.77 18.6901L8.27001 16.1001L10.87 11.6101L13.44 7.15006L14.06 6.06006H25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M25 39.48H16.64L13.44 33.94L10.86 29.48L13.47 25H8.28003L11.95 18.63L13.44 16.06L16.01 11.61L16.64 10.52H25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M25 15.01H19.23L13.47 25L19.23 34.99H25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M8.28001 25L5.70001 29.48"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M44.3 29.48L41.72 25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M25 43.94H35.94L39.14 38.39L41.71 33.94L39.14 29.48"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M39.14 29.4801L44.31 29.4401L46.87 25.0001L43.23 18.6901L41.73 16.1001L39.13 11.6101L36.56 7.15006L35.94 6.06006H25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M25 39.48H33.36L36.56 33.94L39.14 29.48L36.53 25H41.72L38.05 18.63L36.56 16.06L33.99 11.61L33.36 10.52H25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M25 15.01H30.77L36.53 25L30.77 34.99H25"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M19.23 15.01L16.64 10.52"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-            <path
-              class="stroke"
-              d="M30.77 15.01L33.36 10.52"
-              stroke="#ffea00"
-              stroke-width="0.5"
-              stroke-miterlimit="10"
-            ></path>
-          </svg>
-          <span>sell your nft</span>
-        </div>
-        <div class="footer-items">
-          <div class="footer-item">
-            <span class="item-header">marketplace</span>
-            <ul>
-              <a href="#"><li>new</li></a>
-              <a href="#"><li>connect wallet</li></a>
-              <a href="#"><li>utility</li></a>
-            </ul>
+      </div>
+      <div class="wrapper">
+        <div class="footer container">
+          <div class="logo">
+            <svg
+              id="logo-58"
+              width="80"
+              height="80"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="stroke"
+                d="M25 43.94H14.06L10.86 38.39L8.28998 33.94L10.86 29.48"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M10.86 29.4801H5.7L3.13 25.0001L6.77 18.6901L8.27001 16.1001L10.87 11.6101L13.44 7.15006L14.06 6.06006H25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M25 39.48H16.64L13.44 33.94L10.86 29.48L13.47 25H8.28003L11.95 18.63L13.44 16.06L16.01 11.61L16.64 10.52H25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M25 15.01H19.23L13.47 25L19.23 34.99H25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M8.28001 25L5.70001 29.48"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M44.3 29.48L41.72 25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M25 43.94H35.94L39.14 38.39L41.71 33.94L39.14 29.48"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M39.14 29.4801L44.31 29.4401L46.87 25.0001L43.23 18.6901L41.73 16.1001L39.13 11.6101L36.56 7.15006L35.94 6.06006H25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M25 39.48H33.36L36.56 33.94L39.14 29.48L36.53 25H41.72L38.05 18.63L36.56 16.06L33.99 11.61L33.36 10.52H25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M25 15.01H30.77L36.53 25L30.77 34.99H25"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M19.23 15.01L16.64 10.52"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+              <path
+                class="stroke"
+                d="M30.77 15.01L33.36 10.52"
+                stroke="#ffea00"
+                stroke-width="0.5"
+                stroke-miterlimit="10"
+              ></path>
+            </svg>
+            <span>sell your nft</span>
           </div>
-          <div class="footer-item">
-            <span class="item-header">stats</span>
-            <ul>
-              <a href="#"><li>ranking</li></a>
-              <a href="#"><li>auction</li></a>
-              <a href="#"><li>support</li></a>
-            </ul>
-          </div>
-          <div class="footer-item">
-            <span class="item-header">join newsletter</span>
-            <!-- <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-              nobis.
-            </p> -->
-            <div class="subscribe">
-              <input type="email" placeholder="enter your email" />
-              <button class="button button--filled">subscribe</button>
+          <div class="footer-items">
+            <div class="footer-item">
+              <span class="item-header">marketplace</span>
+              <ul>
+                <a href="#"><li>new</li></a>
+                <a href="#"><li>connect wallet</li></a>
+                <a href="#"><li>utility</li></a>
+              </ul>
+            </div>
+            <div class="footer-item">
+              <span class="item-header">stats</span>
+              <ul>
+                <a href="#"><li>ranking</li></a>
+                <a href="#"><li>auction</li></a>
+                <a href="#"><li>support</li></a>
+              </ul>
+            </div>
+            <div class="footer-item">
+              <span class="item-header">join newsletter</span>
+              <div class="subscribe">
+                <input type="email" placeholder="enter your email" />
+                <button class="button button--filled">subscribe</button>
+              </div>
             </div>
           </div>
         </div>

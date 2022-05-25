@@ -1,6 +1,7 @@
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 5,
   spaceBetween: 40,
+
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -8,6 +9,27 @@ var swiper = new Swiper(".mySwiper", {
   navigation: {
     nextEl: ".arrow-right",
     prevEl: ".arrow-left",
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    1000: {
+      slidesPerView: 5,
+      spaceBetween: 40,
+    },
   },
 });
 
@@ -29,5 +51,57 @@ box.forEach((e, i) => {
       icon[i].classList.replace("uil-angle-up", "uil-angle-down");
     }
     console.log(e);
+  });
+});
+
+//------------------- Loading content ------------------ //
+
+const spinnerContainer = document.querySelector(".spinner__container");
+const spinner = document.querySelector(".spinner");
+
+document.addEventListener("DOMContentLoaded", function (e) {
+  spinnerContainer.classList.add("spinner__container");
+  spinner.classList.add("spinner__on");
+});
+
+window.addEventListener("load", function (e) {
+  spinnerContainer.classList.remove("spinner__container");
+  spinner.classList.replace("spinner__on", "spinner__off");
+});
+
+//------------------- Loading content ------------------ //
+
+const header = document.querySelector(".header");
+const newHeaderColor = "var(--container-color-3)";
+const originalHeaderColor = "transparent";
+
+const btnOpen = document.querySelector(".open");
+const btnClose = document.querySelector(".close");
+const links = document.querySelectorAll(".nav-items a");
+
+const navItems = document.querySelector(".nav-items");
+
+btnOpen.addEventListener("click", () => {
+  navItems.style.left = "0";
+  btnOpen.style.display = "none";
+  btnClose.style.display = "block";
+  header.style.background = newHeaderColor;
+  console.log(header);
+});
+
+btnClose.addEventListener("click", () => {
+  navItems.style.left = "-100%";
+  btnClose.style.display = "none";
+  btnOpen.style.display = "block";
+  // header.style.backdropFilter = HeaderBlur;
+  header.style.background = originalHeaderColor;
+});
+
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    navItems.style.left = "-100%";
+    btnClose.style.display = "none";
+    btnOpen.style.display = "block";
+    header.style.background = originalHeaderColor;
   });
 });

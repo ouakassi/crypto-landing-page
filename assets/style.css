@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Changa:wght@300;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;600;700&display=swap");
 :root {
   --header-height: 6rem;
 
@@ -179,6 +176,56 @@ img {
   background-color: var(--first-color-alt-2);
 }
 
+/*========== Spinner loader ==========*/
+
+.spinner__container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: var(--z-modal);
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner__on {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid var(--first-color);
+  border-right: 4px solid transparent;
+  animation: rotation 1s linear infinite;
+}
+.spinner__on::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border-left: 4px solid var(--first-color-alt);
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+.spinner__off {
+  visibility: hidden;
+  display: none;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*----------------- Main css ----------*/
 
 .header {
@@ -197,6 +244,7 @@ nav {
   align-items: center;
 
   padding: 1rem 10%;
+  height: var(--header-height);
   /* line-height: 2; */
 }
 .nav-items {
@@ -211,6 +259,10 @@ nav {
   height: inherit;
   display: flex;
 }
+.btns {
+  display: none;
+}
+
 /* --------------- HERO Section ---------------------- */
 
 .hero {
@@ -218,11 +270,19 @@ nav {
 }
 .hero__container {
   display: flex;
-  gap: 4rem;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
 }
+.hero-images,
+.hero-image,
+.hero-image_cercle {
+  width: 40rem;
+  height: 40rem;
+}
+
 .hero-images {
   position: relative;
-  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -230,8 +290,6 @@ nav {
 .hero-image {
   position: absolute;
   border-radius: 50% 50% 10% 10%;
-  height: 48rem;
-  max-width: 45rem;
   box-shadow: #00000073 0px 0px 10px 0px;
   z-index: var(--z-tooltip);
   transition: 0.2s;
@@ -243,18 +301,16 @@ nav {
   position: absolute;
   display: inline-block;
   content: "";
-  width: 40rem;
-  height: 40rem;
   border: 4px solid var(--first-color-alt);
   border-radius: 50%;
 }
 .cercle1 {
-  left: -1rem;
-  top: 0rem;
+  left: 3rem;
+  top: -3rem;
 }
 .cercle2 {
-  right: -0rem;
-  top: -5rem;
+  right: 1rem;
+  top: 5rem;
   border-color: var(--first-color);
 }
 .hero-data {
@@ -335,7 +391,7 @@ nav {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-3);
   text-transform: capitalize;
 }
 
@@ -635,7 +691,7 @@ nav {
 }
 .box {
   background-color: var(--container-color);
-  width: clamp(10rem, 80%, 80rem);
+  width: clamp(10rem, 95%, 80rem);
   padding: 2rem;
   border-radius: 10px;
   display: flex;
@@ -667,21 +723,27 @@ nav {
 }
 
 footer {
-  background-color: var(--container-color-3);
-  /* clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%); */
-  /* clip-path: circle(76.8% at 51% 91%); */
+  display: flex;
+  flex-direction: column;
 }
-/* .wave-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-} */
+
+.wave-container {
+  transform: translateY(20%);
+  z-index: -1;
+}
+.wave-container svg path {
+  fill: var(--container-color-3);
+}
+.wrapper {
+  background-color: var(--container-color-3);
+}
 .footer {
+  background-color: var(--container-color-3);
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 10rem 2rem;
+  padding: 5rem 2rem 8rem;
 }
 
 .footer .logo {
@@ -712,8 +774,7 @@ footer {
   text-transform: capitalize;
   padding: 0 1rem;
 }
-.footer-item:last-child {
-}
+
 .footer-item ul a {
   margin-bottom: var(--mb-3);
 }
@@ -750,4 +811,259 @@ footer {
   width: 13rem;
   height: 4rem;
   padding: 0;
+}
+
+@media screen and (min-width: 800px) and (max-width: 960px) {
+  .hero__container {
+    gap: 4rem;
+    /* align-items: center;
+    justify-content: center; */
+  }
+
+  .hero-images,
+  .hero-image,
+  .hero-image_cercle {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .hero-data {
+    /* width: 100%; */
+    margin-bottom: var(--mb-1);
+    align-items: normal;
+  }
+
+  .footer {
+    width: 100%;
+    flex-direction: column;
+  }
+  .footer .logo {
+    width: 100%;
+    margin-bottom: var(--mb-1);
+  }
+
+  .footer-items {
+    width: 100%;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-item {
+    margin-bottom: var(--mb-1);
+  }
+
+  .footer .item-header {
+    margin-bottom: 0;
+  }
+  .subscribe {
+    max-width: 35rem;
+  }
+  .footer .subscribe input {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    padding: 5rem 0 1rem;
+  }
+  .container {
+    padding: 4rem 1rem;
+  }
+
+  .btns {
+    display: block;
+    font-size: 3rem;
+  }
+  .close {
+    display: none;
+  }
+  .nav-items {
+    position: fixed;
+    flex-flow: column;
+    text-align: center;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--container-color-3);
+    margin-top: var(--header-height);
+    transition: 0.2s;
+  }
+  .nav-items a {
+    display: block;
+    margin: var(--mb-1) 0;
+    font-size: var(--h2-font-size);
+  }
+
+  .section:first-child {
+    padding: 0 1rem;
+  }
+  .hero__container {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    /* margin-top: 5rem; */
+  }
+
+  .hero-images,
+  .hero-image,
+  .hero-image_cercle {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  .cercle1 {
+    left: 2rem;
+    top: -2rem;
+  }
+  .cercle2 {
+    right: 2rem;
+    top: 2rem;
+  }
+
+  .hero-data {
+    width: 100%;
+    margin-bottom: var(--mb-1);
+    align-items: center;
+  }
+  .hero-numbers {
+    gap: 0;
+  }
+
+  .hero__counter {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero__counter div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .trending-header {
+    flex-direction: column;
+  }
+
+  .button {
+    padding: 1rem;
+  }
+
+  .artists-container {
+    display: flex;
+    /* flex-flow: column; */
+  }
+  .artists {
+    gap: 0 2rem;
+    margin-bottom: var(--mb-2);
+  }
+
+  .artist {
+    gap: 0;
+    padding: 1rem;
+    /* flex-direction: column; */
+  }
+
+  .artist-data {
+    padding: 0;
+    width: 24rem;
+  }
+  .artist-ranking {
+    margin-right: 0;
+  }
+
+  .footer {
+    width: 100%;
+    flex-direction: column;
+  }
+  .footer .logo {
+    width: 100%;
+    margin-bottom: var(--mb-1);
+  }
+
+  .footer-items {
+    width: 100%;
+    gap: 1rem;
+    flex-flow: row wrap;
+
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-item {
+    margin-bottom: var(--mb-1);
+  }
+
+  .footer .item-header {
+    margin-bottom: 0;
+  }
+  .subscribe {
+    max-width: 35rem;
+  }
+  .footer .subscribe input {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .button {
+    width: 15rem;
+  }
+
+  .footer {
+    width: 100%;
+    flex-direction: column;
+  }
+  .footer .logo {
+    width: 100%;
+    margin-bottom: var(--mb-1);
+  }
+
+  .footer-items {
+    width: 100%;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: normal;
+  }
+  .footer-item {
+    margin-bottom: var(--mb-1);
+  }
+
+  .footer .item-header {
+    margin-bottom: 0;
+  }
+  .subscribe {
+    max-width: 30rem;
+  }
+  .footer .subscribe input {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hero-data {
+    align-items: normal;
+  }
+
+  .artists-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .artist {
+    gap: 0;
+    padding: 1rem;
+    flex-direction: column;
+  }
+
+  .artist-data {
+    padding: 0;
+    width: 24rem;
+  }
+  .artist-ranking {
+    margin-right: 0;
+  }
+  .footer-items {
+    align-content: center;
+  }
 }
