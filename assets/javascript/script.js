@@ -106,3 +106,20 @@ links.forEach((link) => {
     header.style.background = originalHeaderColor;
   });
 });
+
+ScrollReveal({
+  origin: "top",
+  distance: "30px",
+  duration: 1000,
+}).reveal(".hero-images , .trending-project , .category , .footer", {
+  interval: 300,
+});
+
+ScrollReveal({
+  origin: "left",
+  distance: "30px",
+  duration: 2500,
+  // reset: true,
+}).reveal(".artist , .box", {
+  interval: 200,
+});
