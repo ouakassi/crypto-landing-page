@@ -1,3 +1,5 @@
+//------------------- Swiper config  ------------------ //
+
 var swiper = new Swiper(".mySwiper", {
   pagination: {
     el: ".swiper-pagination",
@@ -33,6 +35,8 @@ var swiper = new Swiper(".mySwiper", {
     },
   },
 });
+
+//------------------- accordion boxes ------------------ //
 
 const box = document.querySelectorAll(".box");
 const boxContent = document.querySelectorAll(".box-content");
@@ -70,7 +74,7 @@ window.addEventListener("load", function (e) {
   spinner.classList.replace("spinner__on", "spinner__off");
 });
 
-//------------------- Loading content ------------------ //
+//------------------- Responsive Navbar  ------------------ //
 
 const header = document.querySelector(".header");
 const newHeaderColor = "var(--container-color-3)";
@@ -106,6 +110,8 @@ links.forEach((link) => {
     header.style.background = originalHeaderColor;
   });
 });
+
+//------------------- Reveal animation  ------------------ //
 
 ScrollReveal({
   origin: "top",
