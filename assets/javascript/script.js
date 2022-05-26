@@ -111,15 +111,19 @@ ScrollReveal({
   origin: "top",
   distance: "30px",
   duration: 1000,
-}).reveal(".hero-images , .trending-project , .category , .footer", {
-  interval: 300,
-});
+}).reveal(
+  ".header , .hero ,.trending__section  , .category__section , .artists__section , .faq__section , .footer",
+  {
+    interval: 500,
+    cleanup: true,
+  }
+);
 
 ScrollReveal({
-  origin: "left",
+  origin: "bottom",
   distance: "30px",
-  duration: 2500,
-  // reset: true,
-}).reveal(".artist , .box", {
-  interval: 200,
+  duration: 1000,
+}).reveal(".trending-project  , .category , .artists-container , .box", {
+  interval: 500,
+  cleanup: true,
 });
