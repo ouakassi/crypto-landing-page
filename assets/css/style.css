@@ -227,7 +227,7 @@ img {
     transform: rotate(360deg);
   }
 }
-/*----------------- Main css ----------*/
+/*----------------- NavBar  ----------*/
 
 .header {
   width: 100%;
@@ -243,10 +243,8 @@ nav {
   font-size: 1.8rem;
   justify-content: space-between;
   align-items: center;
-
   padding: 1rem 10%;
   height: var(--header-height);
-  /* line-height: 2; */
 }
 .nav-items {
   display: flex;
@@ -411,12 +409,12 @@ nav {
   border-radius: 10px;
   text-transform: capitalize;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transition: 0.2s;
+  transition: 0.2s !important;
 }
 .trending-project:hover {
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  transform: rotate(-2deg);
+  transform: rotate(-2deg) !important;
 }
 .trending-project__img {
   border-radius: 20px;
@@ -644,7 +642,6 @@ nav {
   justify-content: space-between;
   padding: 1rem;
   width: 30rem;
-  /* width: 100%; */
 }
 .artist-name {
   display: flex;
@@ -769,7 +766,6 @@ footer {
 }
 
 .footer-item {
-  /* width: 20%; */
   display: flex;
   flex-flow: column;
   text-transform: capitalize;
@@ -817,8 +813,6 @@ footer {
 @media screen and (min-width: 800px) and (max-width: 960px) {
   .hero__container {
     gap: 4rem;
-    /* align-items: center;
-    justify-content: center; */
   }
 
   .hero-images,
@@ -829,7 +823,6 @@ footer {
   }
 
   .hero-data {
-    /* width: 100%; */
     margin-bottom: var(--mb-1);
     align-items: normal;
   }
@@ -875,6 +868,10 @@ footer {
   .btns {
     display: block;
     font-size: 3rem;
+    transition: 0.2s;
+  }
+  .btns:hover {
+    transform: scale(1.1);
   }
   .close {
     display: none;
@@ -904,7 +901,6 @@ footer {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
-    /* margin-top: 5rem; */
   }
 
   .hero-images,
@@ -953,7 +949,6 @@ footer {
 
   .artists-container {
     display: flex;
-    /* flex-flow: column; */
   }
   .artists {
     gap: 0 2rem;
@@ -963,7 +958,6 @@ footer {
   .artist {
     gap: 0;
     padding: 1rem;
-    /* flex-direction: column; */
   }
 
   .artist-data {

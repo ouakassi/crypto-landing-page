@@ -126,7 +126,7 @@ ScrollReveal({
   origin: "bottom",
   distance: "30px",
   duration: 1000,
-}).reveal(".trending-project  , .category , .artists-container , .box", {
+}).reveal(".trending-project   , .artists-container , .box", {
   interval: 500,
   cleanup: true,
 });
