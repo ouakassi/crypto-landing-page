@@ -55,7 +55,6 @@ box.forEach((e, i) => {
       boxContent[i].style.height = 0;
       icon[i].classList.replace("uil-angle-up", "uil-angle-down");
     }
-    console.log(e);
   });
 });
 
@@ -91,14 +90,12 @@ btnOpen.addEventListener("click", () => {
   btnOpen.style.display = "none";
   btnClose.style.display = "block";
   header.style.background = newHeaderColor;
-  console.log(header);
 });
 
 btnClose.addEventListener("click", () => {
   navItems.style.left = "-100%";
   btnClose.style.display = "none";
   btnOpen.style.display = "block";
-  // header.style.backdropFilter = HeaderBlur;
   header.style.background = originalHeaderColor;
 });
 
