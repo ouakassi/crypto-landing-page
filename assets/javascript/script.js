@@ -130,3 +130,14 @@ ScrollReveal({
   interval: 500,
   cleanup: true,
 });
+
+//------------------- Navbar Shadow ------------------ //
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 20) {
+    header.style.boxShadow = " rgba(0, 0, 0, 0.24) 0px 3px 8px";
+  } else {
+    header.style.boxShadow = "none";
+  }
+  console.log(window.scrollY);
+});
